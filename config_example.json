@@ -1,0 +1,63 @@
+{
+    "project": {
+        "name": "project",
+        "description": "Description of the test case"
+    },
+    "testCase": {
+        "name": "test",
+        "metrics": [
+            "layer"
+        ],
+        "output": {
+            "file_name": "measurements",
+            "methods": [
+                "print",
+                "file",
+                "markdown",
+                "json",
+                "excel",
+                "csv"
+            ]
+        }
+    },
+    "model": {
+        "seed": 42,
+        "loss": "MeanSquaredError",
+        "metrics": [
+            "accuracy"
+        ],
+        "layers": [
+            {
+                "type": "convolutional",
+                "neurons": 32,
+                "kernel_size": 5,
+                "dropout": 0.3,
+                "weight_init": "glorot",
+                "flatten": true,
+                "activation": "ReLU"
+            },
+            {
+                "type": "dense",
+                "neurons": 10,
+                "weight_init": "glorot",
+                "activation": "Sigmoid"
+            }
+        ]
+    },
+    "trainer": {
+        "epochs": 3,
+        "batch_size": 32,
+        "early_stopping": true,
+        "warm_start": false,
+        "validation_fraction": 0.1,
+        "n_epochs_no_improve": 5,
+        "tol": 1e-4,
+        "optimizer": "SGD",
+        "learning_rate": 0.01,
+        "evaluate_metrics": false
+    },
+    "measurer": {
+        "type": "codecarbon",
+        "measure_interval": 2
+    }
+}
