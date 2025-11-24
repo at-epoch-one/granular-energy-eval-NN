@@ -16,10 +16,19 @@ Neural Networks), a tool designed to help users understand the energy behavior o
 
 ## Repository Structure
 
-TODO
+The repository is organized as follows:
 
-
-
+```
+.
+├── README.md                  # This readme file
+├── images                     # Directory containing diagrams and other documentation images
+├── interface                  # Directory containing web interface images
+├── test_cases                 # Directory containing test cases for the tool
+│   ├── base                   # Test case results for base neural network
+│   └── optimized              # Test case results for optimized neural network    
+├── config_example.json        # Example configuration file for GREENN  
+└── user_stories.md            # Document containing the user stories for GREENN's development
+```
 
 ----
 
@@ -32,8 +41,8 @@ These [stories](user_stories.md) were organized into the **Product Backlog**, th
 
 Once the functional requirements were defined, **Use Case Diagrams (UCDs)** were developed to visualize the complete system functionality and how the different actors interact with the tool. There are two main actors: the **User** (see [User UCD Diagram](#user-use-case-diagram)), who interacts with the system to evaluate neural networks, and the **Administrator** (see [Admin UCD Diagram](#admin-use-case-diagram)), who manages the system's configurations and user access.
 
-![User Use Case Diagram](images/UCD_user.png)
-![Admin Use Case Diagram](images/UCD_admin.png)
+<img src="images/UCD_user.png" alt="User Use Case Diagram" height="400" />
+<img src="images/UCD_admin.png" alt="Admin Use Case Diagram" height="400" />
 
 
 ### Development Plan
