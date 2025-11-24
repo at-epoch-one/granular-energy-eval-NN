@@ -1,0 +1,80 @@
+{
+    "project": {
+        "name": "1_testing-MNIST",
+        "description": ""
+    },
+    "testCase": {
+        "name": "base",
+        "description": "No description provided",
+        "metrics": [
+            "layer"
+        ],
+        "output": {
+            "file_name": null,
+            "methods": [
+                "json",
+                "excel"
+            ]
+        }
+    },
+    "model": {
+        "seed": 42,
+        "loss": "SoftmaxCrossEntropy",
+        "layers": [
+            {
+                "type": "convolutional",
+                "neurons": 32,
+                "kernel_size": 3,
+                "dropout": 0.0,
+                "weight_init": "glorot",
+                "flatten": false,
+                "activation": "relu"
+            },
+            {
+                "type": "convolutional",
+                "neurons": 128,
+                "kernel_size": 3,
+                "dropout": 0.0,
+                "weight_init": "glorot",
+                "flatten": true,
+                "activation": "relu"
+            },
+            {
+                "type": "dense",
+                "neurons": 128,
+                "activation": "relu",
+                "dropout": 0.2,
+                "weight_init": "glorot"
+            },
+            {
+                "type": "dense",
+                "neurons": 10,
+                "activation": "linear",
+                "dropout": 0.0,
+                "weight_init": "glorot"
+            }
+        ],
+        "metrics": [
+            "accuracy",
+            "f1",
+            "precision",
+            "recall"
+        ]
+    },
+    "trainer": {
+        "epochs": 20,
+        "batch_size": 64,
+        "early_stopping": false,
+        "warm_start": false,
+        "validation_fraction": 0.1,
+        "n_epochs_no_improve": null,
+        "tol": 0.0001,
+        "optimizer": "SGD",
+        "learning_rate": 0.01,
+        "evaluate_metrics": true
+    },
+    "measurer": {
+        "type": "codecarbon",
+        "measure_interval": 2
+    }
+}
